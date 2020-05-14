@@ -1,0 +1,50 @@
+{
+  "name": "eoscrhapiboilerplate",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "description": "EOSCR hapi Boilerplate",
+  "repository": "https://github.com/eoscostarica/hapi-boilerplate.git",
+  "scripts": {
+    "start": "node src/index",
+    "dev": "env-cmd nodemon -L src/index",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules && yarn && make run",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "format": "yarn prettier --write",
+    "check-format": "yarn prettier --list-different",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "validate": "yarn check-format && yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": ""
+    }
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^9.0.0",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
+    "@hapi/joi": "^17.1.0",
+    "crypto-js": "^4.0.0",
+    "eosjs": "^20.0.3",
+    "graphql-request": "^1.8.2",
+    "hapi-auth-jwt2": "^9.0.1",
+    "hapi-pino": "^6.5.0",
+    "http-status-codes": "^1.4.0",
+    "i18next": "^19.3.2",
+    "ipfs-http-client": "^40.0.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  }
+}
